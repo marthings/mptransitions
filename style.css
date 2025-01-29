@@ -1,0 +1,61 @@
+@view-transition {
+  navigation: auto;
+}
+
+
+
+body {
+  font-family: Avenir;
+  margin: 0;
+}
+
+header {
+  padding: 24px;
+  background: black;
+  view-transition-name: header;
+  animation: slidedown 1s ease-in-out;
+  a {
+    color: #fff;
+  }
+}
+
+main {
+  view-transition-name: content;
+  animation: scale 1s ease-in-out;
+
+  padding: 24px;
+}
+
+.image {
+  view-transition-name: image;
+  animation: slideup 2s ease-in-out;
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  display: flex;
+  gap: 24px;
+  > * {
+    flex: 1;
+  }
+}
+
+@keyframes scale {
+  from {
+    opacity: 0.8;
+    scale: 0.8;
+  }
+}
+
+@keyframes slideup {
+  from {
+    translate: 0 20px;
+  }
+}
+
+@keyframes slidedown {
+  from {
+    translate: 0 -20px;
+  }
+}
